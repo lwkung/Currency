@@ -32,16 +32,16 @@ public class MainActivity extends AppCompatActivity {
                 String ntd = edNtd.getText().toString();
                 if (ntd.equals("")) {
                     new AlertDialog.Builder(MainActivity.this)
-                            .setTitle("Problem")
-                            .setMessage("Please enter your NTD amount")
-                            .setPositiveButton("OK", null)
+                            .setTitle(R.string.problem)
+                            .setMessage(R.string.please_enter_ntd)
+                            .setPositiveButton(R.string.ok, null)
                             .show();
                 } else {
                     String result = String.format(Locale.ENGLISH, "%.4f", Integer.parseInt(ntd) / 30.9);
                     new AlertDialog.Builder(MainActivity.this)
-                            .setTitle("Result")
-                            .setMessage("USD is " + result)
-                            .setPositiveButton("OK", null)
+                            .setTitle(R.string.result)
+                            .setMessage(getString(R.string.usd_is) + result)
+                            .setPositiveButton(R.string.ok, null)
                             .show();
                 }
             }
